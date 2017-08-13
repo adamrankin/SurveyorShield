@@ -136,11 +136,17 @@ void loop()
     {
       // write to file
       gpsAltitudeLogFile.print(GPS.latitude, 4);
+      Serial.print(GPS.latitude, 4);
       gpsAltitudeLogFile.print(", ");
+      Serial.print(", ");
       gpsAltitudeLogFile.print(GPS.longitude, 4);
+      Serial.print(GPS.longitude, 4);
       gpsAltitudeLogFile.print(", "); 
+      Serial.print(", ");
       gpsAltitudeLogFile.println(altitudeMeters);
+      Serial.println(altitudeMeters);
       gpsAltitudeLogFile.close();
+      
     }
 
     timer = millis(); // reset the timer
