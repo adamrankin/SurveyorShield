@@ -104,6 +104,8 @@ void loop()
   float altitudeMeters = 0.f;
   altitudeMeters = baro.getAltitude(); // meters
 
+  Serial.println(altitudeMeters);
+
   // if a sentence is received, we can check the checksum, parse it...
   if (GPS.newNMEAreceived())
   {
@@ -146,7 +148,6 @@ void loop()
       gpsAltitudeLogFile.println(altitudeMeters);
       Serial.println(altitudeMeters);
       gpsAltitudeLogFile.close();
-      
     }
 
     timer = millis(); // reset the timer
